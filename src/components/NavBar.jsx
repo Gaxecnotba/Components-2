@@ -4,8 +4,8 @@ export default function NavBar({ user }) {
       <div>
         {user ? (
           <div>
-            <h1>Welcome, {user.firstName}</h1>
-            <p>{user.itemsInCart} in your cart</p>
+            <h1>{`Welcome, ${user.firstName}`}</h1>
+            <p>{`${user.itemsInCart} in your cart`}</p>
           </div>
         ) : (
           <h1>Login</h1>

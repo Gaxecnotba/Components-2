@@ -1,28 +1,20 @@
-export default function ProductCard({
-  name,
-  description,
-  price,
-  imageUrl,
-  isInStock,
-}) {
+export default function ProductCard(props) {
   return (
-    <div
-      style={{
-        border: "1px solid #ccc",
-        padding: "10px",
-        margin: "10px",
-        maxWidth: "400px",
-      }}
-    >
-      <img
-        src={pros.imageUrl || "https://placehold.co/400x200.jpg?text=Product"}
-        alt={pros.name}
-      />
-      <h3>{name.name}</h3>
-      <p>{pros.description}</p>
-      <div className="price">${pros.price}</div>
-      {pros.isInStock && <p>Unavaible</p>}
-      <button>Add to Cart</button>
-    </div>
+    <>
+      <div className="product-card" style={{ border: "1px solid #ccc" }}>
+        <img
+          src={
+            props.imageUrl || "https://placehold.co/400x200.jpg?text=Product"
+          }
+          alt={props.name}
+        />
+        <h3> {props.name} </h3>
+        <p> {props.description} </p>
+        <div className="price">${props.price}</div>
+        {props.isInStock && <p>Avaible</p>}
+        {!props.isInStock && <p>Unvailable</p>}
+        <button>Add to Cart</button>
+      </div>
+    </>
   );
 }
